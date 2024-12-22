@@ -4,6 +4,9 @@ import { SecondaryButton } from './components/atoms/button/SecondaryButton'
 import { SearchInput } from './components/molecules/SearchInput'
 import { UserCard } from './components/organisms/user/UserCard'
 import './App.css'
+import { HeaderOnly } from './components/templates/HeaderOnly'
+import { BrowserRouter } from 'react-router-dom'
+import { DefalutLayout } from './components/templates/DefaultLayout'
 
 const user = {
   name: 'みや',
@@ -19,13 +22,15 @@ const user = {
 
 function App() {
   return (
-    <div className="App">
-      <PrimaryButton>test</PrimaryButton>
-      <SecondaryButton>みや</SecondaryButton>
-      <br />
-      <SearchInput />
-      <UserCard user={user} />
-    </div>
+    <BrowserRouter>
+      <DefalutLayout>
+        <PrimaryButton>test</PrimaryButton>
+        <SecondaryButton>みや</SecondaryButton>
+        <br />
+        <SearchInput />
+        <UserCard user={user} />
+      </DefalutLayout>
+    </BrowserRouter>
   )
 }
 
